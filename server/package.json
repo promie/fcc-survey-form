@@ -1,0 +1,9 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Backend App for FCC Survey Form",
+  "main": "server.js",
+  "repository": "https://github.com/promie/fcc-survey-form",
+  "author": "Promie Yutasane",
+  "license": "MIT"
+}
