@@ -1,11 +1,11 @@
 <template>
   <div class="wrapper">
     <div class="survey-header">
-      Promie Survey Form
+      Survey Form Header
     </div>
 
     <div class="survey-form">
-
+      Survey Form Section
     </div>
 
   </div>
@@ -27,11 +27,11 @@ export default {
 .survey-header {
   width: 100%;
   height: 20vh;
-  background-color: red;
+  border: 1px solid red;
 }
 
 .survey-form {
-  background-color: gray;
   height: 80vh;
+  border: 1px solid blue;
 }
 </style>
