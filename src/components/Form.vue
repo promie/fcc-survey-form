@@ -1,6 +1,13 @@
 <script>
+import { ROLES } from "@/constants";
+
 export default {
-  name: "Form"
+  name: "Form",
+  data() {
+    return {
+      roles: ROLES
+    };
+  }
 };
 </script>
 
@@ -25,9 +32,7 @@ export default {
       <div class="title-spacer">Which best describes you?</div>
       <select name="role" required>
         <option disabled selected value>Select current role</option>
-        <option value="student">Student</option>
-        <option value="job">Full Time Job</option>
-        <option value="other">Looking For Work</option>
+        <option v-for="role in roles" v-bind:key="role.id" value="role.id">{{ role.desc }}</option>
       </select>
     </div>
 
