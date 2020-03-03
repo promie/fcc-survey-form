@@ -37,8 +37,8 @@ export default {
 .survey-form {
   height: 80vh;
   background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 10px;
   padding: 20px 40px;
+  margin-bottom: 70px;
 }
 
 .title-header {
@@ -51,5 +51,14 @@ export default {
 .title-description {
   color: white;
   text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .survey-form {
+    width: 700px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
 }
 </style>
