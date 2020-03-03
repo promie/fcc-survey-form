@@ -1,12 +1,12 @@
 <script>
-import Form from '@/components/Form.vue'
+import Form from "@/components/Form.vue";
 
 export default {
-  name: 'Survey',
+  name: "Survey",
   components: {
     Form
   }
-}
+};
 </script>
 
 <template>
@@ -38,6 +38,7 @@ export default {
   height: 80vh;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
+  padding: 20px 40px;
 }
 
 .title-header {

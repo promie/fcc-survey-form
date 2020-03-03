@@ -1,39 +1,38 @@
 <script>
 export default {
-  name: 'Form'
-}
+  name: "Form"
+};
 </script>
 
 <template>
   <form id="survey-form">
     <div class="form-wrapper">
-      <label for="name">Name</label>
+      <label for="name" class="title-spacer">Name</label>
       <input type="text" name="name" id="name" placeholder="Enter your name" required />
     </div>
 
     <div class="form-wrapper">
-      <label for="email">Email</label>
+      <label for="email" class="title-spacer">Email</label>
       <input type="email" name="email" id="email" placeholder="Enter your name" required />
     </div>
 
     <div class="form-wrapper">
-      <label for="age">Age (optional)</label>
+      <label for="age" class="title-spacer">Age (optional)</label>
       <input type="number" name="age" id="age" placeholder="Age" required />
     </div>
 
     <div class="form-wrapper">
-      <label>Which best describes you?</label>
+      <div class="title-spacer">Which best describes you?</div>
       <select name="role" required>
         <option disabled selected value>Select current role</option>
         <option value="student">Student</option>
         <option value="job">Full Time Job</option>
-        <option value="other">Other</option>
+        <option value="other">Looking For Work</option>
       </select>
     </div>
-    <!-- TODO - add an input text box if a user selects Other -->
 
     <div class="form-wrapper">
-      <label>What is your favourite programming language?</label>
+      <div class="title-spacer">What is your favourite programming language?</div>
       <select name="language" required>
         <option disabled selected value>Select current language</option>
         <option value="javascript">Javascript</option>
@@ -44,86 +43,49 @@ export default {
     </div>
 
     <div class="form-wrapper">
-      <label>What is your level of experience with the language?</label>
-      <label>
-        <input
-          name="level-experience"
-          value="beginner"
-          type="radio"
-          class="input-radio"
-          checked
-        />Beginner</label
-      >
-      <label>
-        <input
-          name="level-experience"
-          value="intermediate"
-          type="radio"
-          class="input-radio"
-        />Intermediate</label
-      >
-
-      <label
-        ><input
-          name="level-experience"
-          value="advanced"
-          type="radio"
-          class="input-radio"
-        />Advanced</label
-      >
-    </div>
-
-
-    <div class="form-wrapper">
-      <label>
-        Select the area of interests for your language
-        <span>(Check all that apply)</span>
+      <div class="title-spacer">What is your level of experience with the language?</div>
+      <label class="selection-label">
+        <input name="level-experience" value="beginner" type="radio" checked />Beginner
+      </label>
+      <label class="selection-label">
+        <input name="level-experience" value="intermediate" type="radio" />Intermediate
       </label>
 
-      <label
-        ><input
-          name="prefer"
-          value="front-end-projects"
-          type="checkbox"
-          class="input-checkbox"
-        />Front-end Projects</label
-      >
+      <label class="selection-label">
+        <input name="level-experience" value="advanced" type="radio" />Advanced
+      </label>
+    </div>
+
+    <div class="form-wrapper">
+      <div class="title-spacer">
+        Select the area of interests for your language
+        <span>(Check all that apply)</span>
+      </div>
+
+      <label class="selection-label">
+        <input name="prefer" value="front-end-projects" type="checkbox" />Front-end Projects
+      </label>
+      <label class="selection-label">
+        <input name="prefer" value="back-end-projects" type="checkbox" />Back-end Projects
+      </label>
+      <label class="selection-label">
+        <input name="prefer" value="coding-challenges" type="checkbox" />Coding Challenges
+      </label>
       <label>
         <input
-          name="prefer"
-          value="back-end-projects"
-          type="checkbox"
-          class="input-checkbox"
-        />Back-end Projects</label
-      >
-      <label
-        ><input
-          name="prefer"
-          value="coding-challenges"
-          type="checkbox"
-          class="input-checkbox"
-        />Coding Challenges</label
-      >
-      <label
-        ><input
           name="prefer"
           value="data-structures-algorithms"
           type="checkbox"
           class="input-checkbox"
-        />Data Structures and Algorithms</label
-      >
-      <label
-        ><input
-          name="prefer"
-          value="creative-coding"
-          type="checkbox"
-          class="input-checkbox"
-        />Creative Coding</label
-      >
+        />Data Structures and Algorithms
+      </label>
+      <label class="selection-label">
+        <input name="prefer" value="creative-coding" type="checkbox" />Creative Coding
+      </label>
     </div>
 
-        <div class="form-wrapper">
-      <p>Feedback and ways to improve?</p>
+    <div class="form-wrapper">
+      <div class="title-spacer">Feedback and ways to improve?</div>
       <textarea
         id="comments"
         class="input-textarea"
@@ -133,9 +95,7 @@ export default {
     </div>
 
     <div class="form-wrapper">
-      <button type="submit">
-        Submit
-      </button>
+      <button type="submit">Submit</button>
     </div>
   </form>
 </template>
@@ -143,13 +103,29 @@ export default {
 <style scoped>
 .form-wrapper {
   color: white;
+  margin-top: 10px;
 }
 
-label {
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+}
+
+select {
+  width: 100%;
+}
+
+.selection-label {
   display: block;
 }
 
-input {
-  width: 100%;
+.title-spacer {
+  margin-bottom: 5px;
 }
 </style>
