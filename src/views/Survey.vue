@@ -1,21 +1,26 @@
+<script>
+import Form from "@/components/Form.vue";
+
+export default {
+  name: "Survey",
+  components: {
+    Form
+  }
+};
+</script>
+
 <template>
   <div class="wrapper">
     <div class="survey-header">
-      Survey Form Header
+      <div class="title-header">Programming Survey Form</div>
+      <div class="title-description">Thank you so much for taking the time to complete this survey!</div>
     </div>
 
     <div class="survey-form">
-      Survey Form Section
+      <Form />
     </div>
-
   </div>
 </template>
-
-<script>
-export default {
-  name: 'Survey'
-}
-</script>
 
 <style scoped>
 /* Mobile First Approach */
@@ -27,11 +32,23 @@ export default {
 .survey-header {
   width: 100%;
   height: 20vh;
-  border: 1px solid red;
 }
 
 .survey-form {
   height: 80vh;
-  border: 1px solid blue;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
+
+.title-header {
+  color: white;
+  text-align: center;
+  padding-top: 45px;
+  font-size: 30px;
+}
+
+.title-description {
+  color: white;
+  text-align: center;
 }
 </style>
