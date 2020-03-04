@@ -45,12 +45,13 @@ export default {
   color: white;
   text-align: center;
   padding-top: 45px;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .title-description {
   color: white;
   text-align: center;
+  font-size: 16px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -60,6 +61,12 @@ export default {
     margin: 0 auto;
     margin-bottom: 25px;
     height: 70vh;
+  }
+  .title-header {
+    font-size: 35px;
+  }
+  .title-description {
+    font-size: 20px;
   }
 }
 </style>
