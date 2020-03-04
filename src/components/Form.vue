@@ -17,22 +17,22 @@ export default {
 <template>
   <form id="survey-form">
     <div class="form-wrapper">
-      <label for="name">Name</label>
+      <label for="name" class="title">Name</label>
       <input type="text" name="name" id="name" placeholder="Enter your name" required />
     </div>
 
     <div class="form-wrapper">
-      <label for="email">Email</label>
+      <label for="email" class="title">Email</label>
       <input type="email" name="email" id="email" placeholder="Enter your name" required />
     </div>
 
     <div class="form-wrapper">
-      <label for="age">Age (optional)</label>
+      <label for="age" class="title">Age (optional)</label>
       <input type="number" name="age" id="age" placeholder="Age" required />
     </div>
 
     <div class="form-wrapper">
-      <div>Which best describes you?</div>
+      <div class="title">Which best describes you?</div>
       <select name="role" required>
         <option disabled selected value>Select current role</option>
         <option v-for="role in roles" v-bind:key="role.id" value="role.id">{{ role.desc }}</option>
@@ -40,7 +40,7 @@ export default {
     </div>
 
     <div class="form-wrapper">
-      <div>What is your favourite programming language?</div>
+      <div class="title">What is your favourite programming language?</div>
       <select name="language" required>
         <option disabled selected value>Select current language</option>
         <option v-for="lang in languages" v-bind:key="lang.id" value="lang.id">{{ lang.desc }}</option>
@@ -48,14 +48,14 @@ export default {
     </div>
 
     <div class="form-wrapper">
-      <div>What is your level of experience with the language?</div>
+      <div class="title">What is your level of experience with the language?</div>
       <label class="selection-label" v-for="experience in experiences" v-bind:key="experience.id">
         <input name="level-experience" value="experience.id" type="radio" />{{ experience.desc }}
       </label>
     </div>
 
     <div class="form-wrapper">
-      <div>
+      <div class="title">
         Select the area of interests for your language
         <span>(Check all that apply)</span>
       </div>
@@ -65,7 +65,7 @@ export default {
     </div>
 
     <div class="form-wrapper">
-      <div>Feedback and ways to improve?</div>
+      <div class="title">Feedback and ways to improve?</div>
       <textarea
         name="comment"
         placeholder="Enter your comment here..."
@@ -103,10 +103,19 @@ select {
   display: block;
 }
 
+.title {
+  font-weight: 900;
+  color: lightskyblue;
+}
+
 @media only screen and (min-width: 768px) {
   /* For desktop: */
   text-area {
     height: 50px;
+  }
+
+  .title {
+    font-size: 16px;
   }
 }
 </style>

@@ -23,6 +23,7 @@ export default {
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
 /* Mobile First Approach */
 .wrapper {
   display: flex;
@@ -39,13 +40,15 @@ export default {
   background-color: rgba(0, 0, 0, 0.7);
   padding: 20px 40px;
   margin-bottom: 70px;
+  border-radius: 6px;
 }
 
 .title-header {
-  color: white;
+  color: lightskyblue;
   text-align: center;
   padding-top: 45px;
   font-size: 25px;
+  font-family: 'Fredoka One', cursive;
 }
 
 .title-description {
@@ -60,7 +63,8 @@ export default {
     width: 700px;
     margin: 0 auto;
     margin-bottom: 25px;
-    height: 70vh;
+    height: 100%;
+    font-size: 16px;
   }
   .title-header {
     font-size: 35px;
