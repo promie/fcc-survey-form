@@ -1,11 +1,14 @@
 <script>
-import { ROLES } from '@/constants'
+import { ROLES, LANGUAGES, EXPERIENCES, PREFERENCES } from '@/constants'
 
 export default {
   name: 'Form',
   data() {
     return {
-      roles: ROLES
+      roles: ROLES,
+      languages: LANGUAGES,
+      experiences: EXPERIENCES,
+      preferences: PREFERENCES
     }
   }
 }
@@ -40,24 +43,14 @@ export default {
       <div>What is your favourite programming language?</div>
       <select name="language" required>
         <option disabled selected value>Select current language</option>
-        <option value="javascript">Javascript</option>
-        <option value="python">Python</option>
-        <option value="kotlin">Kotlin</option>
-        <option value="java">Java</option>
+        <option v-for="lang in languages" v-bind:key="lang.id" value="lang.id">{{ lang.desc }}</option>
       </select>
     </div>
 
     <div class="form-wrapper">
       <div>What is your level of experience with the language?</div>
-      <label class="selection-label">
-        <input name="level-experience" value="beginner" type="radio" />Beginner
-      </label>
-      <label class="selection-label">
-        <input name="level-experience" value="intermediate" type="radio" />Intermediate
-      </label>
-
-      <label class="selection-label">
-        <input name="level-experience" value="advanced" type="radio" />Advanced
+      <label class="selection-label" v-for="experience in experiences" v-bind:key="experience.id">
+        <input name="level-experience" value="experience.id" type="radio" />{{ experience.desc }}
       </label>
     </div>
 
@@ -66,25 +59,8 @@ export default {
         Select the area of interests for your language
         <span>(Check all that apply)</span>
       </div>
-
-      <label class="selection-label">
-        <input name="prefer" value="front-end-projects" type="checkbox" />Front-end Projects
-      </label>
-      <label class="selection-label">
-        <input name="prefer" value="back-end-projects" type="checkbox" />Back-end Projects
-      </label>
-      <label class="selection-label">
-        <input name="prefer" value="coding-challenges" type="checkbox" />Coding Challenges
-      </label>
-      <label>
-        <input
-          name="prefer"
-          value="data-structures-algorithms"
-          type="checkbox"
-        />Data Structures and Algorithms
-      </label>
-      <label class="selection-label">
-        <input name="prefer" value="creative-coding" type="checkbox" />Creative Coding
+      <label class="selection-label" v-for="preference in preferences" v-bind:key="preference.id">
+        <input name="prefer" value="preference.id" type="checkbox" />{{ preference.desc }}
       </label>
     </div>
 
