@@ -1,35 +1,35 @@
 <script>
-import { ROLES } from "@/constants";
+import { ROLES } from '@/constants'
 
 export default {
-  name: "Form",
+  name: 'Form',
   data() {
     return {
       roles: ROLES
-    };
+    }
   }
-};
+}
 </script>
 
 <template>
   <form id="survey-form">
     <div class="form-wrapper">
-      <label for="name" class="title-spacer">Name</label>
+      <label for="name">Name</label>
       <input type="text" name="name" id="name" placeholder="Enter your name" required />
     </div>
 
     <div class="form-wrapper">
-      <label for="email" class="title-spacer">Email</label>
+      <label for="email">Email</label>
       <input type="email" name="email" id="email" placeholder="Enter your name" required />
     </div>
 
     <div class="form-wrapper">
-      <label for="age" class="title-spacer">Age (optional)</label>
+      <label for="age">Age (optional)</label>
       <input type="number" name="age" id="age" placeholder="Age" required />
     </div>
 
     <div class="form-wrapper">
-      <div class="title-spacer">Which best describes you?</div>
+      <div>Which best describes you?</div>
       <select name="role" required>
         <option disabled selected value>Select current role</option>
         <option v-for="role in roles" v-bind:key="role.id" value="role.id">{{ role.desc }}</option>
@@ -37,7 +37,7 @@ export default {
     </div>
 
     <div class="form-wrapper">
-      <div class="title-spacer">What is your favourite programming language?</div>
+      <div>What is your favourite programming language?</div>
       <select name="language" required>
         <option disabled selected value>Select current language</option>
         <option value="javascript">Javascript</option>
@@ -48,9 +48,9 @@ export default {
     </div>
 
     <div class="form-wrapper">
-      <div class="title-spacer">What is your level of experience with the language?</div>
+      <div>What is your level of experience with the language?</div>
       <label class="selection-label">
-        <input name="level-experience" value="beginner" type="radio" checked />Beginner
+        <input name="level-experience" value="beginner" type="radio" />Beginner
       </label>
       <label class="selection-label">
         <input name="level-experience" value="intermediate" type="radio" />Intermediate
@@ -62,7 +62,7 @@ export default {
     </div>
 
     <div class="form-wrapper">
-      <div class="title-spacer">
+      <div>
         Select the area of interests for your language
         <span>(Check all that apply)</span>
       </div>
@@ -81,7 +81,6 @@ export default {
           name="prefer"
           value="data-structures-algorithms"
           type="checkbox"
-          class="input-checkbox"
         />Data Structures and Algorithms
       </label>
       <label class="selection-label">
@@ -90,10 +89,8 @@ export default {
     </div>
 
     <div class="form-wrapper">
-      <div class="title-spacer">Feedback and ways to improve?</div>
+      <div>Feedback and ways to improve?</div>
       <textarea
-        id="comments"
-        class="input-textarea"
         name="comment"
         placeholder="Enter your comment here..."
       ></textarea>
@@ -111,15 +108,15 @@ export default {
   margin-top: 10px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="number"] {
+input[type='text'],
+input[type='email'],
+input[type='number'] {
   width: 100%;
 }
 
 textarea {
   width: 100%;
-  height: 200px;
+  height: 80px;
 }
 
 select {
@@ -130,7 +127,10 @@ select {
   display: block;
 }
 
-.title-spacer {
-  margin-bottom: 5px;
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  text-area {
+    height: 50px;
+  }
 }
 </style>
