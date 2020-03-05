@@ -10,12 +10,18 @@ export default {
       experiences: EXPERIENCES,
       preferences: PREFERENCES
     };
+  },
+  methods: {
+    onSubmit() {
+      alert("Thank you so much for submitting the survey!");
+      window.location.reload();
+    }
   }
 };
 </script>
 
 <template>
-  <form id="survey-form">
+  <form id="survey-form" v-on:submit.prevent="onSubmit">
     <div class="form-wrapper">
       <label for="name" class="title" id="name-label">Name</label>
       <input type="text" name="name" id="name" placeholder="Enter your name" required />
@@ -28,7 +34,7 @@ export default {
 
     <div class="form-wrapper">
       <label for="number" class="title" id="number-label">Age (optional)</label>
-      <input type="number" name="number" id="number" placeholder="Age" min="0" max="10" required />
+      <input type="number" name="number" id="number" placeholder="Age" min="1" max="100" required />
     </div>
 
     <div class="form-wrapper">
