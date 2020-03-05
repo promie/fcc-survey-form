@@ -42,8 +42,6 @@ export default {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 20px 40px;
-  margin-bottom: 70px;
-  border-radius: 6px;
 }
 
 .title-header {
@@ -69,6 +67,7 @@ export default {
     margin-bottom: 25px;
     height: 100%;
     font-size: 16px;
+    border-radius: 6px;
   }
   .title-header {
     font-size: 35px;
