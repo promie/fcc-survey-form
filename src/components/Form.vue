@@ -1,17 +1,17 @@
 <script>
-import { ROLES, LANGUAGES, EXPERIENCES, PREFERENCES } from '@/constants'
+import { ROLES, LANGUAGES, EXPERIENCES, PREFERENCES } from "@/constants";
 
 export default {
-  name: 'Form',
+  name: "Form",
   data() {
     return {
       roles: ROLES,
       languages: LANGUAGES,
       experiences: EXPERIENCES,
       preferences: PREFERENCES
-    }
+    };
   }
-}
+};
 </script>
 
 <template>
@@ -50,7 +50,8 @@ export default {
     <div class="form-wrapper">
       <div class="title">What is your level of experience with the language?</div>
       <label class="selection-label" v-for="experience in experiences" v-bind:key="experience.id">
-        <input name="level-experience" value="experience.id" type="radio" />{{ experience.desc }}
+        <input name="level-experience" value="experience.id" type="radio" />
+        {{ experience.desc }}
       </label>
     </div>
 
@@ -60,20 +61,18 @@ export default {
         <span>(Check all that apply)</span>
       </div>
       <label class="selection-label" v-for="preference in preferences" v-bind:key="preference.id">
-        <input name="prefer" value="preference.id" type="checkbox" />{{ preference.desc }}
+        <input name="prefer" value="preference.id" type="checkbox" />
+        {{ preference.desc }}
       </label>
     </div>
 
     <div class="form-wrapper">
       <div class="title">Feedback and ways to improve?</div>
-      <textarea
-        name="comment"
-        placeholder="Enter your comment here..."
-      ></textarea>
+      <textarea name="comment" placeholder="Enter your comment here..."></textarea>
     </div>
 
     <div class="form-wrapper">
-      <button type="submit">Submit</button>
+      <button type="submit" class="button">Submit</button>
     </div>
   </form>
 </template>
@@ -84,9 +83,9 @@ export default {
   margin-top: 10px;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='number'] {
+input[type="text"],
+input[type="email"],
+input[type="number"] {
   width: 100%;
 }
 
@@ -106,6 +105,18 @@ select {
 .title {
   font-weight: 900;
   color: lightskyblue;
+}
+
+.button {
+  background-color: #008cba; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
 }
 
 @media only screen and (min-width: 768px) {

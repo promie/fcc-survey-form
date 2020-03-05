@@ -1,12 +1,12 @@
 <script>
-import Form from '@/components/Form.vue'
+import Form from "@/components/Form.vue";
 
 export default {
-  name: 'Survey',
+  name: "Survey",
   components: {
     Form
   }
-}
+};
 </script>
 
 <template>
@@ -23,7 +23,7 @@ export default {
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Fredoka+One&display=swap");
 /* Mobile First Approach */
 .wrapper {
   display: flex;
@@ -36,7 +36,7 @@ export default {
 }
 
 .survey-form {
-  height: 83vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 20px 40px;
   margin-bottom: 70px;
@@ -48,7 +48,7 @@ export default {
   text-align: center;
   padding-top: 45px;
   font-size: 25px;
-  font-family: 'Fredoka One', cursive;
+  font-family: "Fredoka One", cursive;
 }
 
 .title-description {
