@@ -17,23 +17,23 @@ export default {
 <template>
   <form id="survey-form">
     <div class="form-wrapper">
-      <label for="name" class="title">Name</label>
+      <label for="name" class="title" id="name-label">Name</label>
       <input type="text" name="name" id="name" placeholder="Enter your name" required />
     </div>
 
     <div class="form-wrapper">
-      <label for="email" class="title">Email</label>
+      <label for="email" class="title" id="email-label">Email</label>
       <input type="email" name="email" id="email" placeholder="Enter your name" required />
     </div>
 
     <div class="form-wrapper">
-      <label for="age" class="title">Age (optional)</label>
-      <input type="number" name="age" id="age" placeholder="Age" required />
+      <label for="number" class="title" id="number-label">Age (optional)</label>
+      <input type="number" name="number" id="number" placeholder="Age" min="0" max="10" required />
     </div>
 
     <div class="form-wrapper">
       <div class="title">Which best describes you?</div>
-      <select name="role" required>
+      <select name="role" id="dropdown" required>
         <option disabled selected value>Select current role</option>
         <option v-for="role in roles" v-bind:key="role.id" value="role.id">{{ role.desc }}</option>
       </select>
@@ -72,7 +72,7 @@ export default {
     </div>
 
     <div class="form-wrapper">
-      <button type="submit" class="button">Submit</button>
+      <button id="submit" type="submit" class="button">Submit</button>
     </div>
   </form>
 </template>

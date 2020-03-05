@@ -12,8 +12,11 @@ export default {
 <template>
   <div class="wrapper">
     <div class="survey-header">
-      <div class="title-header">Programming Survey Form</div>
-      <div class="title-description">Thank you so much for taking the time to complete this survey!</div>
+      <h1 class="title-header" id="title">Programming Survey Form</h1>
+      <p
+        class="title-description"
+        id="description"
+      >Thank you so much for taking the time to complete this survey!</p>
     </div>
 
     <div class="survey-form">
@@ -46,7 +49,7 @@ export default {
 .title-header {
   color: lightskyblue;
   text-align: center;
-  padding-top: 45px;
+  padding-top: 25px;
   font-size: 25px;
   font-family: "Fredoka One", cursive;
 }
@@ -55,6 +58,7 @@ export default {
   color: white;
   text-align: center;
   font-size: 16px;
+  margin-top: -17px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -68,9 +72,11 @@ export default {
   }
   .title-header {
     font-size: 35px;
+    padding-top: 10px;
   }
   .title-description {
     font-size: 20px;
+    margin-top: -25px;
   }
 }
 </style>
